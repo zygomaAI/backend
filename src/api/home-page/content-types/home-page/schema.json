@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "Home Page"
+    "displayName": "Home Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,19 +28,19 @@
       "type": "richtext",
       "required": true
     },
-    "InsightsTitle": {
+    "InsightsContent": {
       "type": "richtext"
     },
     "InsightsImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "WorkforceEdge": {
       "displayName": "WorkForce",
@@ -74,6 +75,10 @@
       "type": "component",
       "repeatable": true,
       "component": "reviews.testimonials"
+    },
+    "InsightsTitle": {
+      "type": "string",
+      "required": true
     }
   }
 }

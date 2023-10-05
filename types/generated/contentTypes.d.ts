@@ -757,6 +757,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     singularName: 'home-page';
     pluralName: 'home-pages';
     displayName: 'Home Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -766,7 +767,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     MetaKeywords: Attribute.Text & Attribute.Required;
     HeaderTitle: Attribute.String & Attribute.Required;
     HeaderContent: Attribute.RichText & Attribute.Required;
-    InsightsTitle: Attribute.RichText;
+    InsightsContent: Attribute.RichText;
     InsightsImage: Attribute.Media & Attribute.Required;
     WorkforceEdge: Attribute.Component<'cards.work-force', true>;
     BenefitsTitle: Attribute.String & Attribute.Required;
@@ -775,6 +776,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     TestimonalsTitle: Attribute.String & Attribute.Required;
     TestimonialsSubTitle: Attribute.String & Attribute.Required;
     TestimonialsArr: Attribute.Component<'reviews.testimonials', true>;
+    InsightsTitle: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
