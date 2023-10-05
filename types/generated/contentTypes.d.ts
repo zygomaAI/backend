@@ -677,6 +677,46 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUsAboutUs extends Schema.SingleType {
+  collectionName: 'about_uses';
+  info: {
+    singularName: 'about-us';
+    pluralName: 'about-uses';
+    displayName: 'About Us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    MetaDesc: Attribute.String & Attribute.Required;
+    MetaKeywords: Attribute.String & Attribute.Required;
+    Title: Attribute.String & Attribute.Required;
+    HeaderContent: Attribute.RichText & Attribute.Required;
+    HeaderImage: Attribute.Media & Attribute.Required;
+    InsightsTitle: Attribute.String & Attribute.Required;
+    InsightsContent: Attribute.RichText & Attribute.Required;
+    MissionTitle: Attribute.String & Attribute.Required;
+    MissionText: Attribute.RichText;
+    VisionTitle: Attribute.String & Attribute.Required;
+    VisionText: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us.about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -811,6 +851,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::service.service': ApiServiceService;
       'api::solution.solution': ApiSolutionSolution;
