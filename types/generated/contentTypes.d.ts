@@ -771,12 +771,12 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     InsightsImage: Attribute.Media & Attribute.Required;
     WorkforceEdge: Attribute.Component<'cards.work-force', true>;
     BenefitsTitle: Attribute.String & Attribute.Required;
-    BenefitsContent: Attribute.String & Attribute.Required;
     BenefitsArr: Attribute.Component<'desc.benefits', true>;
     TestimonalsTitle: Attribute.String & Attribute.Required;
     TestimonialsSubTitle: Attribute.String & Attribute.Required;
     TestimonialsArr: Attribute.Component<'reviews.testimonials', true>;
     InsightsTitle: Attribute.String & Attribute.Required;
+    BenefitsContent: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

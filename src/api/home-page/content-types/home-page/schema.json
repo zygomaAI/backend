@@ -52,10 +52,6 @@
       "type": "string",
       "required": true
     },
-    "BenefitsContent": {
-      "type": "text",
-      "required": true
-    },
     "BenefitsArr": {
       "displayName": "Benefits",
       "type": "component",
@@ -78,6 +74,10 @@
     },
     "InsightsTitle": {
       "type": "string",
+      "required": true
+    },
+    "BenefitsContent": {
+      "type": "richtext",
       "required": true
     }
   }
