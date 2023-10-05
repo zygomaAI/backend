@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_cards_work_forces",
+  "info": {
+    "displayName": "WorkForce"
+  },
+  "options": {},
+  "attributes": {
+    "CardTitle": {
+      "type": "string",
+      "required": true
+    },
+    "CardContent": {
+      "type": "richtext",
+      "required": true
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

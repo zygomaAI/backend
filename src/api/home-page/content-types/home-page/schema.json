@@ -1,0 +1,79 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MetaDesc": {
+      "type": "text",
+      "required": true
+    },
+    "MetaKeywords": {
+      "type": "text",
+      "required": true
+    },
+    "HeaderTitle": {
+      "type": "string",
+      "required": true
+    },
+    "HeaderContent": {
+      "type": "richtext",
+      "required": true
+    },
+    "InsightsTitle": {
+      "type": "richtext"
+    },
+    "InsightsImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "WorkforceEdge": {
+      "displayName": "WorkForce",
+      "type": "component",
+      "repeatable": true,
+      "component": "cards.work-force"
+    },
+    "BenefitsTitle": {
+      "type": "string",
+      "required": true
+    },
+    "BenefitsContent": {
+      "type": "string",
+      "required": true
+    },
+    "BenefitsArr": {
+      "displayName": "Benefits",
+      "type": "component",
+      "repeatable": true,
+      "component": "desc.benefits"
+    },
+    "TestimonalsTitle": {
+      "type": "string",
+      "required": true
+    },
+    "TestimonialsSubTitle": {
+      "type": "string",
+      "required": true
+    },
+    "TestimonialsArr": {
+      "displayName": "Testimonials",
+      "type": "component",
+      "repeatable": true,
+      "component": "reviews.testimonials"
+    }
+  }
+}

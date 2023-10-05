@@ -362,44 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiSolutionSolution extends Schema.CollectionType {
-  collectionName: 'solutions';
-  info: {
-    singularName: 'solution';
-    pluralName: 'solutions';
-    displayName: 'Solution';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    MetaDesc: Attribute.Text & Attribute.Required;
-    MetaKeywords: Attribute.Text & Attribute.Required;
-    Title: Attribute.String & Attribute.Required;
-    HeaderContent: Attribute.RichText & Attribute.Required;
-    HeaderImage: Attribute.Media & Attribute.Required;
-    InsightsTitle: Attribute.String & Attribute.Required;
-    InsightsContent: Attribute.RichText & Attribute.Required;
-    InsightsMedia: Attribute.Media & Attribute.Required;
-    SectionData: Attribute.Component<'section.section-data', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::solution.solution',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::solution.solution',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -715,6 +677,124 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Home Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    MetaDesc: Attribute.Text & Attribute.Required;
+    MetaKeywords: Attribute.Text & Attribute.Required;
+    HeaderTitle: Attribute.String & Attribute.Required;
+    HeaderContent: Attribute.RichText & Attribute.Required;
+    InsightsTitle: Attribute.RichText;
+    InsightsImage: Attribute.Media & Attribute.Required;
+    WorkforceEdge: Attribute.Component<'cards.work-force', true>;
+    BenefitsTitle: Attribute.String & Attribute.Required;
+    BenefitsContent: Attribute.String & Attribute.Required;
+    BenefitsArr: Attribute.Component<'desc.benefits', true>;
+    TestimonalsTitle: Attribute.String & Attribute.Required;
+    TestimonialsSubTitle: Attribute.String & Attribute.Required;
+    TestimonialsArr: Attribute.Component<'reviews.testimonials', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
+  info: {
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'Service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    MetaDesc: Attribute.Text & Attribute.Required;
+    MetaKeywords: Attribute.Text & Attribute.Required;
+    Title: Attribute.String & Attribute.Required;
+    HeaderContent: Attribute.RichText & Attribute.Required;
+    HeaderImage: Attribute.Media & Attribute.Required;
+    InsightsTitle: Attribute.String & Attribute.Required;
+    InsightsContent: Attribute.RichText & Attribute.Required;
+    InsightsImage: Attribute.Media & Attribute.Required;
+    SectionData: Attribute.Component<'section.section-data', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSolutionSolution extends Schema.CollectionType {
+  collectionName: 'solutions';
+  info: {
+    singularName: 'solution';
+    pluralName: 'solutions';
+    displayName: 'Solution';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    MetaDesc: Attribute.Text & Attribute.Required;
+    MetaKeywords: Attribute.Text & Attribute.Required;
+    Title: Attribute.String & Attribute.Required;
+    HeaderContent: Attribute.RichText & Attribute.Required;
+    HeaderImage: Attribute.Media & Attribute.Required;
+    InsightsTitle: Attribute.String & Attribute.Required;
+    InsightsContent: Attribute.RichText & Attribute.Required;
+    InsightsMedia: Attribute.Media & Attribute.Required;
+    SectionData: Attribute.Component<'section.section-data', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -725,13 +805,15 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::solution.solution': ApiSolutionSolution;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::service.service': ApiServiceService;
+      'api::solution.solution': ApiSolutionSolution;
     }
   }
 }
